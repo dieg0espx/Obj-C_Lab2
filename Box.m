@@ -18,19 +18,23 @@
 
 - (instancetype)initWithMyWidth:(float) myWidth andMyHeigth:(float) myHeigth andMyLength:(float) myLength
 {
-  self = [super init];
-  if (self) {
-      _myWidth = myWidth;
-      _myHeigth = myHeigth;
-      _myLength = myLength;
-  }
-  return self;
+    self = [super init];
+    if (self) {
+        _myWidth = myWidth;
+        _myHeigth = myHeigth;
+        _myLength = myLength;
+    }
+    return self;
 }
 
-- (float) timesFitInside:(float) W andH:(float) H andL:(float) L{
-    float vol1 = (W*H*L);
+- (float) theVolumen:(float) W1 andH1:(float) H1 andL1:(float) L1{
+    return (W1*H1*L1);
+}
+
+- (float) timesFitInside:(float) W2 andH:(float) H2 andL:(float) L2{
+    float vol1 = (W2*H2*L2);
     float vol2 = (_myWidth*_myHeigth*_myLength);
-  
+    
     if (vol1 > vol2) {
         return vol1 / vol2;
     }else if ( vol2 > vol1){

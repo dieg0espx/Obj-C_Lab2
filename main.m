@@ -29,16 +29,20 @@ int main(int argc, const char * argv[]) {
         float user_widht = getUserInput(255, @"Enter the Width");
         float user_lenght = getUserInput(255, @"Enter the Lenght");
         
-        Box *ans = [[Box alloc] init];
-        ans.myWidth = user_widht;
-        ans.myHeigth = user_height;
-        ans.myLength = user_lenght;
-        NSLog(@"%.2f", ans.myWidth*ans.myHeigth*ans.myLength);
+        Box *box = [[Box alloc] init];
+        box.myWidth = user_widht;
+        box.myHeigth = user_height;
+        box.myLength = user_lenght;
         
         
-        Box *ans2 = [[Box alloc] initWithMyWidth:ans.myWidth andMyHeigth:ans.myHeigth andMyLength:ans.myLength];
-        float sol = [ans2 timesFitInside:10 andH:10 andL:10];
-        NSLog(@"%.2f", sol);
+        Box *ans1 = [[Box alloc] init];
+        float sol1 =[ans1 theVolumen:box.myWidth andH1:box.myHeigth andL1:box.myLength];
+        NSLog(@"%.2f", sol1);
+        
+        
+        Box *ans2 = [[Box alloc] initWithMyWidth:box.myWidth andMyHeigth:box.myHeigth andMyLength:box.myLength];
+        float sol2 = [ans2 timesFitInside:10 andH:10 andL:10];
+        NSLog(@"%.2f", sol2);
     }
     return 0;
 }
